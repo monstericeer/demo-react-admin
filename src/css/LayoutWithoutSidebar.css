@@ -1,0 +1,23 @@
+.login_layout{
+    height: 100vh;
+}
+
+.login_layout .header{
+    background: #000c17;
+    padding: 0;
+}
+
+.header .logo_wrapper{
+    width: 200px;
+}
+
+.header .logo_wrapper .logo{
+    height: 32px;
+    background: #ffffff;
+    opacity: 0.2;
+    margin: 16px;
+}
+
+.login_layout .footer{
+    text-align: center;
+}
