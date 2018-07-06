@@ -1,4 +1,4 @@
-// React v16.x + React-Router v4.x +  + React Intl + Redux v4.x + Redux-thunk + ES6/7
+// React v16.x + React-Router v4.x + React Intl + Redux v4.x + Redux-thunk
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
