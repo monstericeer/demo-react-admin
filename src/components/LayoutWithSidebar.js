@@ -44,7 +44,7 @@ class LayoutWithSidebar extends React.Component {
     render() {
         const menu = (
             <Menu className="header_menu">
-                <Menu.Item key="0">退出</Menu.Item>
+                <Menu.Item key="0">{this.props.msgs.signout}</Menu.Item>
             </Menu>
         );
         return (
