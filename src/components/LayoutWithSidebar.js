@@ -5,14 +5,13 @@ import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {Layout, Menu, Icon, Dropdown, Avatar, Breadcrumb, Button} from 'antd';
-import {localeEN, localeZH, navToggle} from "../redux/actions";
-import '../css/LayoutWithSidebar.css';
+import {localeEN, localeZH} from "../redux/actions";
+import '../assets/css/LayoutWithSidebar.css';
 
 const mapStateToProps = (state) => {
     return {
         locale: state.localeReducer.locale,
         msgs: state.localeReducer.msgs,
-        toggle: state.navToggleReducer.toggle,
     }
 };
 
@@ -20,7 +19,6 @@ const mapDispatchToProps = (dispatch) => {
     return {
         localeZH: () => dispatch(localeZH()),
         localeEN: () => dispatch(localeEN()),
-        onToggle: () => dispatch(navToggle()),
     }
 };
 
@@ -32,6 +30,12 @@ const navBar = [
 ];
 
 class LayoutWithSidebar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            collapsed: false
+        }
+    }
 
     handleClick = () => {
         if (this.props.locale === 'zh-CN') {
@@ -42,9 +46,12 @@ class LayoutWithSidebar extends React.Component {
     };
 
     render() {
+        const {navItem, userMenu} = this.props.msgs;
         const menu = (
             <Menu className="header_menu">
-                <Menu.Item key="0">{this.props.msgs.signout}</Menu.Item>
+                <Menu.Item key="0">{userMenu.profile}</Menu.Item>
+                <Menu.Divider />
+                <Menu.Item key="1">{userMenu.signout}</Menu.Item>
             </Menu>
         );
         return (
@@ -53,7 +60,7 @@ class LayoutWithSidebar extends React.Component {
                     theme="dark"
                     trigger={null}
                     collapsible
-                    collapsed={this.props.toggle}
+                    collapsed={this.state.collapsed}
                     className="nav_bar"
                 >
                     <div className="logo" />
@@ -75,7 +82,7 @@ class LayoutWithSidebar extends React.Component {
                                 <Menu.Item key={item.name}>
                                     <NavLink to={`/${item.linkTo}`}>
                                         <Icon type={item.icon} />
-                                        {this.props.toggle ? '' : <span>{this.props.msgs[item.name]}</span>}
+                                        {this.state.collapsed ? '' : <span>{navItem[item.name]}</span>}
                                     </NavLink>
                                 </Menu.Item>
                             ))
@@ -88,15 +95,15 @@ class LayoutWithSidebar extends React.Component {
                         <div className='toggle_wrapper'>
                             <Icon
                                 className="trigger"
-                                type={this.props.toggle ? 'menu-unfold' : 'menu-fold'}
-                                onClick={this.props.onToggle}
+                                type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+                                onClick={() => this.setState({collapsed: !this.state.collapsed})}
                             />
                             <Button type='default' size='small' onClick={this.handleClick}>
                                 {this.props.locale === 'zh-CN' ? 'EN' : '中文'}
                             </Button>
                         </div>
                         <div className="header_right">
-                            <Dropdown overlay={menu}>
+                            <Dropdown overlay={menu} trigger={['hover']}>
                                 <div className="user">
                                     <div className="name">Mo Chen</div>
                                     <Avatar>Mo</Avatar>

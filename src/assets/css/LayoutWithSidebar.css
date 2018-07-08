@@ -28,6 +28,7 @@
     display: flex;
     align-items: center;
     margin-right: 24px;
+    cursor: pointer;
 }
 
 .header_right .user .name{

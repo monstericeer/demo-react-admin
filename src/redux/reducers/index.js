@@ -1,10 +1,12 @@
+//Reducer is a pure function that takes previous state and an action
+//as arguments and returns the next State.
 import zh_CN from '../../locale/zh_CN';
 import en_US from '../../locale/en_US';
 
-//Locale Provider
 const msgs = navigator.language === 'zh-CN' ? zh_CN : en_US;
 const language = navigator.language === 'zh-CN' ? 'zh-CN' : 'en-US';
 
+// locale provider
 let localeReducer = (state = {locale: language, msgs: msgs}, action) => {
     switch (action.type) {
         case 'LOCALE_EN':
@@ -22,12 +24,12 @@ let localeReducer = (state = {locale: language, msgs: msgs}, action) => {
     }
 };
 
-// navBar toggle
-const navToggleReducer = (state = {toggle: false}, action) => {
+// sign in
+let tokenReducer = (state = {token: localStorage.token || false}, action) => {
     switch (action.type) {
-        case 'NAV_TOGGLE':
+        case 'TOKEN':
             return {
-                toggle: !state.toggle
+                token: action.token
             };
         default:
             return state;
@@ -36,5 +38,5 @@ const navToggleReducer = (state = {toggle: false}, action) => {
 
 export {
     localeReducer,
-    navToggleReducer,
+    tokenReducer,
 }
