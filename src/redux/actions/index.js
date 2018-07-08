@@ -5,7 +5,6 @@ import en_US from '../../locale/en_US';
 import zh_CN from '../../locale/zh_CN';
 import en from 'react-intl/locale-data/en';
 import zh from 'react-intl/locale-data/zh';
-import history from '../../history/history';
 
 const DEV_URL = process.env.REACT_APP_DEV_URL;
 const PRO_URL = process.env.REACT_APP_PRO_URL;
@@ -14,21 +13,20 @@ const URL = process.env.NODE_ENV !== 'development' ? DEV_URL : PRO_URL;
 // locale provider
 addLocaleData([...en, ...zh]);
 
-let localeEN = () => ({
+const localeEN = () => ({
     type: 'LOCALE_EN',
     locale: 'en-US',
     msgs: en_US,
 });
 
-let localeZH = () => ({
+const localeZH = () => ({
     type: 'LOCALE_ZH',
     locale: 'zh-CN',
     msgs: zh_CN,
 });
 
 // sign in
-let signIn = (params) => {
-    console.log(params)
+const signIn = (params) => {
     return (dispatch, getState) => {
         fetch(URL+'/users/signin', {
             method: 'POST',
@@ -45,13 +43,13 @@ let signIn = (params) => {
                 localStorage.token = data.token;
                 localStorage.timeStamp = new Date().getTime();
             } else {
-                console.log('无法登录')
+                console.log(getState())
             }
         })
     }
 };
 
-let token = (token) => ({
+const token = (token) => ({
     type: 'TOKEN',
     token
 });

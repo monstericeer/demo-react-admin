@@ -7,7 +7,7 @@ const msgs = navigator.language === 'zh-CN' ? zh_CN : en_US;
 const language = navigator.language === 'zh-CN' ? 'zh-CN' : 'en-US';
 
 // locale provider
-let localeReducer = (state = {locale: language, msgs: msgs}, action) => {
+export const localeReducer = (state = {locale: language, msgs: msgs}, action) => {
     switch (action.type) {
         case 'LOCALE_EN':
             return {
@@ -25,7 +25,7 @@ let localeReducer = (state = {locale: language, msgs: msgs}, action) => {
 };
 
 // sign in
-let tokenReducer = (state = {token: localStorage.token || false}, action) => {
+export const tokenReducer = (state = {token: localStorage.token || false}, action) => {
     switch (action.type) {
         case 'TOKEN':
             return {
@@ -35,8 +35,3 @@ let tokenReducer = (state = {token: localStorage.token || false}, action) => {
             return state;
     }
 };
-
-export {
-    localeReducer,
-    tokenReducer,
-}
