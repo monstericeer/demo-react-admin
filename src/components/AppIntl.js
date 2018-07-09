@@ -3,7 +3,7 @@ import { IntlProvider } from 'react-intl';
 import { Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import App from './App';
-import history from "../history/history";
+import history from "../libs/history";
 
 const mapStateToProps = (state) => {
     return {
