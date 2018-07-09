@@ -63,6 +63,7 @@ class httpRequest {
     create() {
         let conf = {
             baseURL,
+            // timeout: 2000
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
