@@ -5,10 +5,7 @@ import en_US from '../../locale/en_US';
 import zh_CN from '../../locale/zh_CN';
 import en from 'react-intl/locale-data/en';
 import zh from 'react-intl/locale-data/zh';
-
-const DEV_URL = process.env.REACT_APP_DEV_URL;
-const PRO_URL = process.env.REACT_APP_PRO_URL;
-const URL = process.env.NODE_ENV !== 'development' ? DEV_URL : PRO_URL;
+import {signIn} from '../../api/api';
 
 // locale provider
 addLocaleData([...en, ...zh]);
@@ -32,26 +29,23 @@ const localeZH = () => {
 };
 
 // sign in
-const signIn = (params) => {
+const handleSignIn = (params) => {
     return (dispatch, getState) => {
-        fetch(URL+'/users/signin', {
-            method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(params)
-        }).then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-        }).then(res => {
-            if (res.success === true) {
+        return new Promise((resolve, reject) => {
+            signIn(params).then(res => {
                 const data = res.data;
-                dispatch(token(data.token));
-                localStorage.token = data.token;
-                localStorage.timeStamp = new Date().getTime();
-            } else {
-                console.log(getState())
-            }
-        })
+                if (data) {
+                    dispatch(token(data.token));
+                    localStorage.token = data.token;
+                    localStorage.timeStamp = new Date().getTime();
+                    resolve(data);
+                } else {
+                    resolve(-1)
+                }
+            }).catch(err => {
+                reject(-1)
+            })
+        });
     }
 };
 
@@ -63,5 +57,5 @@ const token = (token) => ({
 export {
     localeEN,
     localeZH,
-    signIn
+    handleSignIn
 }

@@ -27,7 +27,7 @@ export const localeReducer = (state = {locale: localLanguage || language, msgs: 
 };
 
 // sign in
-export const tokenReducer = (state = {token: localStorage.token || false}, action) => {
+export const tokenReducer = (state = {token: localStorage.getItem('token')}, action) => {
     switch (action.type) {
         case 'TOKEN':
             return {

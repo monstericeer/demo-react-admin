@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
-import {Row, Col, Card, Form, Input, Icon, Button} from 'antd';
+import {Row, Col, Card, Form, Input, Icon, Button, message} from 'antd';
 import '../assets/css/Login.css';
-import {signIn} from "../redux/actions";
+import {handleSignIn} from "../redux/actions";
 
 const FormItem = Form.Item;
 
@@ -15,7 +15,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        signIn: (params) => dispatch(signIn(params)),
+        handleSignIn: (params) => dispatch(handleSignIn(params)),
     }
 };
 
@@ -25,15 +25,12 @@ class Login extends React.Component {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err && values) {
-                this.props.signIn(values)
+                this.props.handleSignIn(values).then(res => {
+                    const {loginSuccess, loginFail} = this.props.msgs.messages;
+                    res === -1 ? message.error(loginFail) : message.success(loginSuccess);
+                })
             }
         });
-    };
-
-    componentDidMount() {
-        if (new Date().getTime() - localStorage.timeStamp > 1000*60*60*24) { // 24 hours
-            localStorage.clear();
-        }
     };
 
     render() {
