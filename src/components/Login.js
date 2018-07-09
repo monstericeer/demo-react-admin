@@ -2,8 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import {Row, Col, Card, Form, Input, Icon, Button, message} from 'antd';
-import '../assets/css/Login.css';
 import {handleSignIn} from "../redux/actions";
+import '../assets/css/Login.css';
 
 const FormItem = Form.Item;
 
