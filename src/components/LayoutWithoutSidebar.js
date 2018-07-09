@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Layout, Button } from 'antd';
 import {localeEN, localeZH} from "../redux/actions";
-import '../assets/css/LayoutWithoutSidebar.css';
+import '../assets/css/layoutHasNoSidebar.less';
 
 const mapStateToProps = (state) => {
     return {
@@ -40,7 +40,7 @@ class LayoutWithoutSidebar extends React.Component {
                         {this.props.locale === 'zh-CN' ? 'EN' : '中文'}
                     </Button>
                 </Header>
-                <Content className="content_wrapper">{this.props.children}</Content>
+                <Content>{this.props.children}</Content>
                 <Footer className="footer">demo-react-admin @ https://github.com/mochen0505</Footer>
             </Layout>
         )

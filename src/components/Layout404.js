@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/css/Layout404.css';
+import '../assets/css/layout404.less';
 
 class Layout404 extends React.Component {
     render() {

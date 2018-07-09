@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import {Row, Col, Card, Form, Input, Icon, Button, message} from 'antd';
 import {handleSignIn} from "../redux/actions";
-import '../assets/css/Login.css';
+import '../assets/css/login.less'
 
 const FormItem = Form.Item;
 
@@ -70,7 +70,7 @@ class Login extends React.Component {
                 </Col>
                 <Col xs={12} sm={12} md={6} className='login_wrapper'>
                     <Card className="login_card" title={loginForm.title} >
-                        <Form className="login_form">
+                        <Form>
                             {
                                 formItems.map((item, i) => (
                                     <FormItem className="form_item" key={i} label={null/*item.label*/}>

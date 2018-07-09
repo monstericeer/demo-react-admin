@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/css/NoMatch.css';
+import '../assets/css/noMatch.less';
 
 class NoMatch extends React.Component {
     render() {

@@ -6,7 +6,7 @@ import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {Layout, Menu, Icon, Dropdown, Avatar, Breadcrumb, Button} from 'antd';
 import {localeEN, localeZH} from "../redux/actions";
-import '../assets/css/LayoutWithSidebar.css';
+import '../assets/css/layoutHasSidebar.less';
 
 const mapStateToProps = (state) => {
     return {
