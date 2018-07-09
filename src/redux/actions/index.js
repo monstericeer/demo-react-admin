@@ -13,17 +13,23 @@ const URL = process.env.NODE_ENV !== 'development' ? DEV_URL : PRO_URL;
 // locale provider
 addLocaleData([...en, ...zh]);
 
-const localeEN = () => ({
-    type: 'LOCALE_EN',
-    locale: 'en-US',
-    msgs: en_US,
-});
+const localeEN = () => {
+    localStorage.language = 'en-US';
+    return {
+        type: 'LOCALE_EN',
+        locale: 'en-US',
+        msgs: en_US,
+    }
+};
 
-const localeZH = () => ({
-    type: 'LOCALE_ZH',
-    locale: 'zh-CN',
-    msgs: zh_CN,
-});
+const localeZH = () => {
+    localStorage.language = 'zh-CN';
+    return {
+        type: 'LOCALE_ZH',
+        locale: 'zh-CN',
+        msgs: zh_CN,
+    }
+};
 
 // sign in
 const signIn = (params) => {
