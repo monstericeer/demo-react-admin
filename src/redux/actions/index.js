@@ -43,7 +43,7 @@ const handleSignIn = (params) => {
                     resolve(-1)
                 }
             }).catch(err => {
-                reject(-1)
+                reject(err)
             })
         });
     }

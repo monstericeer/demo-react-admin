@@ -41,7 +41,7 @@ class LayoutWithoutSidebar extends React.Component {
                     </Button>
                 </Header>
                 <Content className="content_wrapper">{this.props.children}</Content>
-                <Footer className="footer">Footer</Footer>
+                <Footer className="footer">demo-react-admin @ https://github.com/mochen0505</Footer>
             </Layout>
         )
     }

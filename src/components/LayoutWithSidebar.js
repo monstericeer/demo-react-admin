@@ -127,7 +127,7 @@ class LayoutWithSidebar extends React.Component {
                             {this.props.children}
                         </div>
                     </Content>
-                    <Footer className="footer">footer</Footer>
+                    <Footer className="footer">demo-react-admin @ https://github.com/mochen0505</Footer>
                 </Layout>
             </Layout>
         )

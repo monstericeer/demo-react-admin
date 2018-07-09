@@ -23,11 +23,13 @@ class Login extends React.Component {
 
     handleClick = (e) => {
         e.preventDefault();
+        const {loginSuccess, loginFail} = this.props.msgs.messages;
         this.props.form.validateFields((err, values) => {
             if (!err && values) {
                 this.props.handleSignIn(values).then(res => {
-                    const {loginSuccess, loginFail} = this.props.msgs.messages;
                     res === -1 ? message.error(loginFail) : message.success(loginSuccess);
+                }).catch(err => {
+                    message.error(loginFail)
                 })
             }
         });
