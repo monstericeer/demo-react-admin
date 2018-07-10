@@ -7,7 +7,7 @@ const en_US = {
     // Login
     loginIntro: {
         title: 'This is a React Demo',
-        details: 'The tech stack used in this project includes ES6, Created-React-App, React v16.x, React-Router v4.x, Antd v3.x, React Intl, Redux v4.x, React-Redux v5.x, Axios, Redux-thunk, Less. In the next version, the Demo will be constructed by Webpack v4.x, Redux-saga will be used instead of the current scheme of Redux-thunk. Besides, Selector will be added to optimize the state management. Moreover, ServiceWorker, Node middle layer, Server side rendering and Immutable might be added in the future version.',
+        details: 'The tech stack used in this project includes ES6, Create-React-App, React v16.x, React-Router v4.x, Antd v3.x, React Intl, Redux v4.x, React-Redux v5.x, Axios, Redux-thunk, Less. In the next version, the Demo will be constructed by Webpack v4.x, Redux-saga will be used instead of the current scheme of Redux-thunk. Besides, Selector will be added to optimize the state management. Moreover, ServiceWorker, Node middle layer, Server side rendering and Immutable might be added in the future version.',
     },
     loginForm: {
         title: 'Log in',

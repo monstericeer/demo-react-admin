@@ -7,7 +7,7 @@ const en_ZH = {
     // 登陆
     loginIntro: {
         title: '这是一个React的Demo',
-        details: '目前使用到的技术栈包括ES6，Created-React-App，React v16.x，React-Router v4.x，Antd v3.x，React Intl，Redux v4.x，React-Redux v5.x，Axios，Redux-thunk，Less。下个版本的Demo将使用Webpack构建，使用Redux-saga代替目前的Redux-thunk方案。另外，将加入Selector，用于优化Redux状态管理。未来版本还可能加入ServiceWorker，Node中间层，服务端渲染，以及Immutable。',
+        details: '目前使用到的技术栈包括ES6，Create-React-App，React v16.x，React-Router v4.x，Antd v3.x，React Intl，Redux v4.x，React-Redux v5.x，Axios，Redux-thunk，Less。下个版本的Demo将使用Webpack构建，使用Redux-saga代替目前的Redux-thunk方案。另外，将加入Selector，用于优化Redux状态管理。未来版本还可能加入ServiceWorker，Node中间层，服务端渲染，以及Immutable。',
     },
     loginForm: {
         title: '登录',

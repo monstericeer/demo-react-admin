@@ -6,6 +6,7 @@ import LayoutWithSidebar from './LayoutWithSidebar';
 import LayoutWithoutSidebar from './LayoutWithoutSidebar';
 import Layout404 from './Layout404';
 import NoMatch from "./NoMatch";
+import 'nprogress/nprogress.css'
 
 const mapStateToProps = (state) => {
     return {

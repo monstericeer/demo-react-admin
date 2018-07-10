@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import {Row, Col, Card, Form, Input, Icon, Button, message} from 'antd';
 import {handleSignIn} from "../redux/actions";
-import '../assets/css/login.less'
+import '../assets/css/login.less';
 
 const FormItem = Form.Item;
 

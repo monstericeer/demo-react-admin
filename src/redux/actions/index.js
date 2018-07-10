@@ -6,6 +6,7 @@ import zh_CN from '../../locale/zh_CN';
 import en from 'react-intl/locale-data/en';
 import zh from 'react-intl/locale-data/zh';
 import {signIn} from '../../api/api';
+import utils from '../../libs/utils'
 
 // locale provider
 addLocaleData([...en, ...zh]);
@@ -32,7 +33,9 @@ const localeZH = () => {
 const handleSignIn = (params) => {
     return (dispatch, getState) => {
         return new Promise((resolve, reject) => {
+            utils.nProgress().start();
             signIn(params).then(res => {
+                utils.nProgress().done();
                 const data = res.data;
                 if (data) {
                     dispatch(token(data.token));
@@ -43,6 +46,7 @@ const handleSignIn = (params) => {
                     resolve(-1)
                 }
             }).catch(err => {
+                utils.nProgress().done();
                 reject(err)
             })
         });
