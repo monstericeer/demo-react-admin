@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f99bf594-bb72-4d98-849f-dd657ac37b63" name="Default" comment="changed css to less">
+    <list default="true" id="f99bf594-bb72-4d98-849f-dd657ac37b63" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locale/en_US.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/locale/en_US.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locale/zh_CN.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/locale/zh_CN.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/layoutHasNoSidebar.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/layoutHasNoSidebar.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/login.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/login.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LayoutWithoutSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LayoutWithoutSidebar.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,14 +28,32 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="layoutHasNoSidebar.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/css/layoutHasNoSidebar.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+            <state relative-caret-position="21">
+              <caret line="64" column="16" lean-forward="true" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.less" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/assets/css/login.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -62,11 +75,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/redux/actions/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="33" column="36" lean-forward="true" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+            <state relative-caret-position="441">
+              <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#107#148#0" expanded="true" />
@@ -138,7 +151,6 @@
         <option value="$PROJECT_DIR$/src/assets/css/Login.less" />
         <option value="$PROJECT_DIR$/src/assets/css/Login.css" />
         <option value="$PROJECT_DIR$/src/components/Signup.js" />
-        <option value="$PROJECT_DIR$/src/assets/css/login.less" />
         <option value="$PROJECT_DIR$/src/assets/css/noMatch.less" />
         <option value="$PROJECT_DIR$/src/components/NoMatch.js" />
         <option value="$PROJECT_DIR$/src/assets/css/Layout404.css" />
@@ -146,7 +158,6 @@
         <option value="$PROJECT_DIR$/src/components/Layout404.js" />
         <option value="$PROJECT_DIR$/src/assets/css/layoutWithoutSidebar.less" />
         <option value="$PROJECT_DIR$/src/assets/css/LayoutWithoutSidebar.css" />
-        <option value="$PROJECT_DIR$/src/components/LayoutWithoutSidebar.js" />
         <option value="$PROJECT_DIR$/src/components/LayoutWithSidebar.js" />
         <option value="$PROJECT_DIR$/src/assets/css/layoutHasSidebar.less" />
         <option value="$PROJECT_DIR$/src/assets/css/LayoutWithSidebar.css" />
@@ -156,8 +167,11 @@
         <option value="$PROJECT_DIR$/src/locale/zh_CN.js" />
         <option value="$PROJECT_DIR$/src/libs/utils.js" />
         <option value="$PROJECT_DIR$/src/components/App.js" />
-        <option value="$PROJECT_DIR$/src/redux/actions/index.js" />
         <option value="$PROJECT_DIR$/src/components/Login.js" />
+        <option value="$PROJECT_DIR$/src/redux/actions/index.js" />
+        <option value="$PROJECT_DIR$/src/components/LayoutWithoutSidebar.js" />
+        <option value="$PROJECT_DIR$/src/assets/css/layoutHasNoSidebar.less" />
+        <option value="$PROJECT_DIR$/src/assets/css/login.less" />
       </list>
     </option>
   </component>
@@ -218,6 +232,13 @@
               <item name="demo-react-admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo-react-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo-react-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="demo-react-admin" type="b2602c69:ProjectViewProjectNode" />
@@ -332,7 +353,7 @@
       <workItem from="1531101414601" duration="25070000" />
       <workItem from="1531135537234" duration="3311000" />
       <workItem from="1531150897202" duration="1078000" />
-      <workItem from="1531187340651" duration="9966000" />
+      <workItem from="1531187340651" duration="10874000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1530863168141</created>
@@ -446,11 +467,18 @@
       <option name="project" value="LOCAL" />
       <updated>1531152502044</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="progress bar added">
+      <created>1531203325680</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1531203325680</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126494000" />
+    <option name="totallyTimeSpent" value="127402000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -513,7 +541,8 @@
     <MESSAGE value="minor change" />
     <MESSAGE value="customized theme added" />
     <MESSAGE value="changed css to less" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed css to less" />
+    <MESSAGE value="progress bar added" />
+    <option name="LAST_COMMIT_MESSAGE" value="progress bar added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -649,13 +678,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/css/Login.css" />
     <entry file="file://$PROJECT_DIR$/src/assets/css/Signup.css" />
-    <entry file="file://$PROJECT_DIR$/src/assets/css/login.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/css/NoMatch.css" />
     <entry file="file://$PROJECT_DIR$/src/components/NoMatch.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -680,20 +702,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/css/LayoutWithoutSidebar.css" />
-    <entry file="file://$PROJECT_DIR$/src/assets/css/layoutHasNoSidebar.less">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/css/layoutWithSidebar.less" />
-    <entry file="file://$PROJECT_DIR$/src/components/LayoutWithoutSidebar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config-overrides.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -702,9 +711,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/css/LayoutWithSidebar.css" />
-    <entry file="file://$PROJECT_DIR$/src/assets/css/layoutHasSidebar.less">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/css/layout404.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -716,17 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/LayoutWithSidebar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="129" column="20" selection-start-line="129" selection-start-column="20" selection-end-line="129" selection-end-column="20" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#44#70#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -809,16 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Signup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/css/signup.less">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -832,23 +817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/libs/utils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -858,12 +826,79 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/redux/actions/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="33" column="36" lean-forward="true" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+        <state relative-caret-position="441">
+          <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#107#148#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Signup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="64" column="16" lean-forward="true" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/css/layoutHasSidebar.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-567" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/LayoutWithSidebar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="113" column="56" lean-forward="true" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="56" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#44#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/LayoutWithoutSidebar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="42" column="52" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/css/layoutHasNoSidebar.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/css/login.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
         </state>
       </provider>
     </entry>

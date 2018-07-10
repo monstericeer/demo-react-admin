@@ -40,7 +40,7 @@ class LayoutWithoutSidebar extends React.Component {
                         {this.props.locale === 'zh-CN' ? 'EN' : '中文'}
                     </Button>
                 </Header>
-                <Content>{this.props.children}</Content>
+                <Content className="content_wrapper">{this.props.children}</Content>
                 <Footer className="footer">demo-react-admin @ https://github.com/mochen0505</Footer>
             </Layout>
         )
