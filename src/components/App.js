@@ -53,6 +53,7 @@ class App extends React.Component {
                         }/>
                     ))
                 }
+                <Redirect from='/' to='/home' exact/>
                 <Layout404>
                     <Route component={NoMatch}/>
                 </Layout404>

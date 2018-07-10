@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f99bf594-bb72-4d98-849f-dd657ac37b63" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/layoutHasNoSidebar.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/layoutHasNoSidebar.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/login.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/login.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LayoutWithoutSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LayoutWithoutSidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LayoutWithSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LayoutWithSidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/routes.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,20 +19,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+            <state relative-caret-position="423">
+              <caret line="55" column="47" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="47" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layoutHasNoSidebar.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assets/css/layoutHasNoSidebar.less">
+      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/config/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+            <state relative-caret-position="105">
+              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LayoutWithSidebar.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/LayoutWithSidebar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#44#70#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -49,7 +68,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.less" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assets/css/login.less">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
@@ -132,7 +151,6 @@
         <option value="$PROJECT_DIR$/src/components/Nomatch.js" />
         <option value="$PROJECT_DIR$/src/components/Home.js" />
         <option value="$PROJECT_DIR$/src/components/AppIntl.js" />
-        <option value="$PROJECT_DIR$/src/config/routes.js" />
         <option value="$PROJECT_DIR$/src/utils/registerServiceWorker.js" />
         <option value="$PROJECT_DIR$/src/css/Layout404.css" />
         <option value="$PROJECT_DIR$/src/css/NoMatch.css" />
@@ -158,7 +176,6 @@
         <option value="$PROJECT_DIR$/src/components/Layout404.js" />
         <option value="$PROJECT_DIR$/src/assets/css/layoutWithoutSidebar.less" />
         <option value="$PROJECT_DIR$/src/assets/css/LayoutWithoutSidebar.css" />
-        <option value="$PROJECT_DIR$/src/components/LayoutWithSidebar.js" />
         <option value="$PROJECT_DIR$/src/assets/css/layoutHasSidebar.less" />
         <option value="$PROJECT_DIR$/src/assets/css/LayoutWithSidebar.css" />
         <option value="$PROJECT_DIR$/package.json" />
@@ -166,12 +183,14 @@
         <option value="$PROJECT_DIR$/src/locale/en_US.js" />
         <option value="$PROJECT_DIR$/src/locale/zh_CN.js" />
         <option value="$PROJECT_DIR$/src/libs/utils.js" />
-        <option value="$PROJECT_DIR$/src/components/App.js" />
         <option value="$PROJECT_DIR$/src/components/Login.js" />
         <option value="$PROJECT_DIR$/src/redux/actions/index.js" />
         <option value="$PROJECT_DIR$/src/components/LayoutWithoutSidebar.js" />
         <option value="$PROJECT_DIR$/src/assets/css/layoutHasNoSidebar.less" />
         <option value="$PROJECT_DIR$/src/assets/css/login.less" />
+        <option value="$PROJECT_DIR$/src/components/LayoutWithSidebar.js" />
+        <option value="$PROJECT_DIR$/src/config/routes.js" />
+        <option value="$PROJECT_DIR$/src/components/App.js" />
       </list>
     </option>
   </component>
@@ -237,13 +256,6 @@
               <item name="demo-react-admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="demo-react-admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="demo-react-admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="demo-react-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -251,12 +263,6 @@
               <item name="demo-react-admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="demo-react-admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="demo-react-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="demo-react-admin" type="b2602c69:ProjectViewProjectNode" />
@@ -353,7 +359,7 @@
       <workItem from="1531101414601" duration="25070000" />
       <workItem from="1531135537234" duration="3311000" />
       <workItem from="1531150897202" duration="1078000" />
-      <workItem from="1531187340651" duration="10874000" />
+      <workItem from="1531187340651" duration="13792000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1530863168141</created>
@@ -474,33 +480,40 @@
       <option name="project" value="LOCAL" />
       <updated>1531203325680</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="minor css change">
+      <created>1531204320069</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1531204320069</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127402000" />
+    <option name="totallyTimeSpent" value="130320000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16442953" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32905984" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Mongo Explorer" order="3" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.33760685" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16442953" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -542,7 +555,8 @@
     <MESSAGE value="customized theme added" />
     <MESSAGE value="changed css to less" />
     <MESSAGE value="progress bar added" />
-    <option name="LAST_COMMIT_MESSAGE" value="progress bar added" />
+    <MESSAGE value="minor css change" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor css change" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -663,16 +677,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="1" column="12" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -860,24 +864,6 @@
         <state relative-caret-position="-567" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/LayoutWithSidebar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="113" column="56" lean-forward="true" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="56" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#44#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/LayoutWithoutSidebar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
@@ -899,6 +885,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/LayoutWithSidebar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#44#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="55" column="47" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

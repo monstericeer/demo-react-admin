@@ -25,7 +25,7 @@ const mapDispatchToProps = (dispatch) => {
 const { Header, Content, Sider, Footer } = Layout;
 
 const navBar = [
-    {linkTo: '', name: 'home', icon: 'home'},
+    {linkTo: 'home', name: 'home', icon: 'home'},
     {linkTo: 'messages', name: 'messages', icon: 'mail'},
 ];
 
