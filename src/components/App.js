@@ -6,7 +6,7 @@ import LayoutWithSidebar from './LayoutWithSidebar';
 import LayoutWithoutSidebar from './LayoutWithoutSidebar';
 import Layout404 from './Layout404';
 import NoMatch from "./NoMatch";
-import 'nprogress/nprogress.css'
+import 'nprogress/nprogress.css';
 
 const mapStateToProps = (state) => {
     return {
@@ -16,14 +16,8 @@ const mapStateToProps = (state) => {
 
 class App extends React.Component {
 
-    componentDidMount() {
-        if (new Date().getTime() - localStorage.timeStamp > 1000*60*60*24) { // 24 hours
-            localStorage.clear();
-        }
-    };
-
     render() {
-        const isAuthenticated = this.props.isAuthenticated;
+        const {isAuthenticated} = this.props;
         const {from} = this.props.location.state || {from: {pathname: "/"}};
         return (
             <Switch>

@@ -4,7 +4,9 @@ import '../assets/css/signup.less';
 class Signup extends React.Component {
     render() {
         return (
-            <Fragment>注册</Fragment>
+            <Fragment>
+                1
+            </Fragment>
         )
     }
 }

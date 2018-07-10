@@ -10,6 +10,7 @@ const FormItem = Form.Item;
 const mapStateToProps = (state) => {
     return {
         msgs: state.localeReducer.msgs,
+        isLoading: state.loadingReducer.isLoading,
     }
 };
 
@@ -36,6 +37,7 @@ class Login extends React.Component {
     };
 
     render() {
+        const {isLoading} = this.props;
         const {loginIntro, loginForm} = this.props.msgs;
         const {getFieldDecorator} = this.props.form;
         const formItems= [
@@ -68,7 +70,7 @@ class Login extends React.Component {
                     <h2>{loginIntro.title}</h2>
                     <p>{loginIntro.details}</p>
                 </Col>
-                <Col xs={12} sm={12} md={6} className='login_wrapper'>
+                <Col xs={18} sm={12} md={6} className='login_wrapper'>
                     <Card className="login_card" title={loginForm.title} >
                         <Form>
                             {
@@ -98,7 +100,7 @@ class Login extends React.Component {
                                 ))
                             }
                             <FormItem className="login_button">
-                                <Button type="primary" onClick={this.handleClick}>{loginForm.button}</Button>
+                                <Button type="primary" onClick={this.handleClick} loading={isLoading}>{loginForm.button}</Button>
                             </FormItem>
                         </Form>
                         <Link className='login_footer' to='/signup'>{loginForm.signup}</Link>

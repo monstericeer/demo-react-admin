@@ -46,7 +46,6 @@ class httpRequest {
                     // 权限错误
                     if (data.code === 2000) {
                         localStorage.removeItem('token');
-                        localStorage.removeItem('timeStamp');
                         window.location.href = '/login'
                     } else {
                         // 其他业务错误

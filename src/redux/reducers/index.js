@@ -26,6 +26,18 @@ export const localeReducer = (state = {locale: localLanguage || language, msgs: 
     }
 };
 
+// loading
+export const loadingReducer = (state = {isLoading: false}, action) => {
+    switch (action.type) {
+        case 'LOADING':
+            return {
+                isLoading: action.isLoading
+            };
+        default:
+            return state;
+    }
+};
+
 // sign in
 export const tokenReducer = (state = {token: localStorage.getItem('token')}, action) => {
     switch (action.type) {

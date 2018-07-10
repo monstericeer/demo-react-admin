@@ -6,7 +6,7 @@ import zh_CN from '../../locale/zh_CN';
 import en from 'react-intl/locale-data/en';
 import zh from 'react-intl/locale-data/zh';
 import {signIn} from '../../api/api';
-import utils from '../../libs/utils'
+import utils from '../../libs/utils';
 
 // locale provider
 addLocaleData([...en, ...zh]);
@@ -29,37 +29,45 @@ const localeZH = () => {
     }
 };
 
-// sign in
+const handleLoading = (isLoading) => ({
+    type: 'LOADING',
+    isLoading
+});
+
+const token = (token) => {
+    localStorage.token = token;
+    return {
+        type: 'TOKEN',
+        token
+    }
+};
+
 const handleSignIn = (params) => {
     return (dispatch, getState) => {
+        utils.nProgress().start();
+        dispatch(handleLoading(true));
         return new Promise((resolve, reject) => {
-            utils.nProgress().start();
             signIn(params).then(res => {
                 utils.nProgress().done();
+                dispatch(handleLoading(false));
                 const data = res.data;
                 if (data) {
                     dispatch(token(data.token));
-                    localStorage.token = data.token;
-                    localStorage.timeStamp = new Date().getTime();
                     resolve(data);
                 } else {
-                    resolve(-1)
+                    resolve(-1);
                 }
             }).catch(err => {
                 utils.nProgress().done();
+                dispatch(handleLoading(false));
                 reject(err)
             })
         });
     }
 };
 
-const token = (token) => ({
-    type: 'TOKEN',
-    token
-});
-
 export {
     localeEN,
     localeZH,
-    handleSignIn
+    handleSignIn,
 }
