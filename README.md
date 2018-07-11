@@ -41,5 +41,6 @@ demo-react-admin
 * Webpack v4.x
 * Redux-saga
 * selector
+* Unit test
 * SSD
 * Immutable
