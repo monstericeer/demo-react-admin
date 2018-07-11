@@ -40,7 +40,7 @@ demo-react-admin
 * ~~Add request/response interceptors~~
 * Webpack v4.x
 * Redux-saga
-* selector
+* reselect
+* Immutable
 * Unit test
 * SSD
-* Immutable
