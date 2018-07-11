@@ -48,8 +48,6 @@ const handleSignIn = (params) => {
         dispatch(handleLoading(true));
         return new Promise((resolve, reject) => {
             signIn(params).then(res => {
-                utils.nProgress().done();
-                dispatch(handleLoading(false));
                 const data = res.data;
                 if (data) {
                     dispatch(token(data.token));
@@ -58,9 +56,10 @@ const handleSignIn = (params) => {
                     resolve(-1);
                 }
             }).catch(err => {
-                utils.nProgress().done();
-                dispatch(handleLoading(false));
                 reject(err)
+            }).finally(res => {
+                dispatch(handleLoading(false));
+                utils.nProgress().done();
             })
         });
     }
