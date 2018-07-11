@@ -44,7 +44,7 @@ const token = (token) => {
 
 const handleSignIn = (params) => {
     return (dispatch, getState) => {
-        utils.nProgress().start();
+        utils.nProgress.start();
         dispatch(handleLoading(true));
         return new Promise((resolve, reject) => {
             signIn(params).then(res => {
@@ -59,7 +59,7 @@ const handleSignIn = (params) => {
                 reject(err)
             }).finally(res => {
                 dispatch(handleLoading(false));
-                utils.nProgress().done();
+                utils.nProgress.done();
             })
         });
     }

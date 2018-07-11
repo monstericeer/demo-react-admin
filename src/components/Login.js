@@ -1,8 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
-import {Row, Col, Card, Form, Input, Icon, Button, message} from 'antd';
+import {Row, Col, Card, Form, Input, Icon, Button} from 'antd';
 import {handleSignIn} from "../redux/actions";
+import utils from '../libs/utils';
 import '../assets/css/login.less';
 
 const FormItem = Form.Item;
@@ -28,9 +29,9 @@ class Login extends React.Component {
         this.props.form.validateFields((err, values) => {
             if (!err && values) {
                 this.props.handleSignIn(values).then(res => {
-                    res === -1 ? message.error(loginFail) : message.success(loginSuccess);
+                    res === -1 ? utils.nMessage.error(loginFail) : utils.nMessage.success(loginSuccess);
                 }).catch(err => {
-                    message.error(loginFail)
+                    utils.nMessage.error(loginFail)
                 })
             }
         });
