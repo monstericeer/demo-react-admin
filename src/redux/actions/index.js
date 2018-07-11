@@ -12,7 +12,7 @@ import utils from '../../libs/utils';
 addLocaleData([...en, ...zh]);
 
 const localeEN = () => {
-    localStorage.language = 'en-US';
+    window.localStorage.setItem('language', 'en-US');
     return {
         type: 'LOCALE_EN',
         locale: 'en-US',
@@ -21,7 +21,7 @@ const localeEN = () => {
 };
 
 const localeZH = () => {
-    localStorage.language = 'zh-CN';
+    window.localStorage.setItem('language', 'zh-CN');
     return {
         type: 'LOCALE_ZH',
         locale: 'zh-CN',
@@ -35,7 +35,7 @@ const handleLoading = (isLoading) => ({
 });
 
 const token = (token) => {
-    localStorage.token = token;
+    window.localStorage.setItem('token', token);
     return {
         type: 'TOKEN',
         token

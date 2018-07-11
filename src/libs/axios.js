@@ -22,7 +22,7 @@ class httpRequest {
         // 添加请求拦截器
         instance.interceptors.request.use(config => {
             if (!config.url.includes('users/signin')) {
-                config.headers['Authorization'] = `Bearer ${localStorage.getItem('token')}`
+                config.headers['Authorization'] = `Bearer ${window.localStorage.getItem('token')}`
             }
             // 在发送请求之前做些什么
             return config
@@ -45,7 +45,7 @@ class httpRequest {
                 if (data.code !== 1000) {
                     // 权限错误
                     if (data.code === 2000) {
-                        localStorage.removeItem('token');
+                        window.localStorage.removeItem('token');
                         window.location.href = '/login'
                     } else {
                         // 其他业务错误

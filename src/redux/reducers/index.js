@@ -3,10 +3,10 @@
 import zh_CN from '../../locale/zh_CN';
 import en_US from '../../locale/en_US';
 
-const language = navigator.language === 'zh-CN' ? 'zh-CN' : 'en-US';
-const msgs = navigator.language === 'zh-CN' ? zh_CN : en_US;
-const localLanguage = localStorage.language;
-const localMsgs = localStorage.language === 'zh-CN' ? zh_CN : en_US;
+const language = window.navigator.language === 'zh-CN' ? 'zh-CN' : 'en-US';
+const msgs = window.navigator.language === 'zh-CN' ? zh_CN : en_US;
+const localLanguage = window.localStorage.getItem('language');
+const localMsgs = window.localStorage.getItem('language') === 'zh-CN' ? zh_CN : en_US;
 
 // locale provider
 export const localeReducer = (state = {locale: localLanguage || language, msgs: localMsgs || msgs}, action) => {
