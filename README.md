@@ -33,7 +33,7 @@ demo-react-admin
 ### TODO ###
 
 * More functionality
-* Optimization with cache
+* Optimization
 * ~~Antd customized theme~~
 * ~~Replace css with Less~~
 * ~~Replace Fetch with Axios~~
