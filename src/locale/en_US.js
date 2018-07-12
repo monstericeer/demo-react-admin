@@ -1,8 +1,12 @@
 const en_US = {
     // Messages
     messages: {
-        loginSuccess: 'Logged In',
-        loginFail: 'Log in failed'
+        loginSuccess: 'Logged in',
+        loginFail: 'Log in failed',
+        signupSuccess: 'Signed up',
+        signupFail: 'Sign up failed',
+        smsCaptchaSuccess: 'Captcha sent',
+        smsCaptchaFail: 'Failed to send captcha',
     },
     // Login
     loginIntro: {
@@ -19,6 +23,30 @@ const en_US = {
         phPassword: 'Please enter your password',
         button: 'Log in',
         signup: 'Sign up',
+    },
+    signupForm: {
+        title: 'Sign up',
+        emptyName: 'Please enter your username',
+        errorName: 'Combination of 5 to 12 numbers or characters',
+        phName: 'Please enter your username',
+        emptyMobile: 'Mobile can not be blank',
+        errorMobile: 'Bad Mobile',
+        phMobile: 'Please enter your mobile',
+        emptyPassword: 'Password can not be blank',
+        errorPassword: 'Combination of 6 to 13 numbers, characters or underscores',
+        phPassword: 'Please enter your password',
+        emptyCheckPass: 'Confirm password can not be blank',
+        errorCheckPass: 'Password does not match',
+        phCheckPass: 'Please confirm your password',
+        emptyCaptcha: 'Captcha can not be blank',
+        errorCaptcha: '',
+        phCaptcha: 'Captcha',
+        captchaButtonText: 'Captcha',
+        captchaButtonTextPressed: 'Resend in ',
+        term: 'Agree to our terms of service and privacy statement',
+        termMessage: 'Check to agree',
+        button: 'Sign up',
+        login: 'Already have an account? Log in now',
     },
     // nav bar
     navItem: {

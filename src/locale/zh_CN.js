@@ -2,7 +2,11 @@ const en_ZH = {
     // 提示信息
     messages: {
         loginSuccess: '登录成功',
-        loginFail: '登录失败'
+        loginFail: '登录失败',
+        signupSuccess: '注册成功',
+        signupFail: '注册失败',
+        smsCaptchaSuccess: '验证码已发送',
+        smsCaptchaFail: '获取验证码失败',
     },
     // 登陆
     loginIntro: {
@@ -19,6 +23,30 @@ const en_ZH = {
         phPassword: '请输入密码',
         button: '登录',
         signup: '免费注册',
+    },
+    signupForm: {
+        title: '注册',
+        emptyName: '请输入用户名',
+        errorName: '5-12个字符,只可包含数字和中英文字符',
+        phName: '请输入用户名',
+        emptyMobile: '手机号码不能为空',
+        errorMobile: '请输入正确的手机号码',
+        phMobile: '请输入手机号码',
+        emptyPassword: '密码不能为空',
+        errorPassword: '6-13个字符,只可包含数字字母下划线',
+        phPassword: '请输入密码',
+        emptyCheckPass: '重复密码不能为空',
+        errorCheckPass: '密码不一致',
+        phCheckPass: '请重复输入密码',
+        emptyCaptcha: '验证码不能为空',
+        errorCaptcha: '',
+        phCaptcha: '验证码',
+        captchaButtonText: '验证码',
+        captchaButtonTextPressed: '秒后重发',
+        term: '同意服务条款及隐私声明',
+        termMessage: '请勾选',
+        button: '注册',
+        login: '已经注册？立即登录',
     },
     // 导航栏
     navItem: {

@@ -43,4 +43,4 @@ demo-react-admin
 * reselect
 * Immutable
 * Unit test
-* SSD
+* SSR

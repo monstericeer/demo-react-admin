@@ -5,7 +5,7 @@ import en_US from '../../locale/en_US';
 import zh_CN from '../../locale/zh_CN';
 import en from 'react-intl/locale-data/en';
 import zh from 'react-intl/locale-data/zh';
-import {signIn} from '../../api/api';
+import {signIn, smsCaptcha, signUp} from '../../api/api';
 import utils from '../../libs/utils';
 
 // locale provider
@@ -58,8 +58,51 @@ const handleSignIn = (params) => {
             }).catch(err => {
                 reject(err)
             }).finally(res => {
-                dispatch(handleLoading(false));
                 utils.nProgress.done();
+                dispatch(handleLoading(false));
+            })
+        });
+    }
+};
+
+const handleCaptcha = (params) => {
+    return (dispatch, getState) => {
+        utils.nProgress.start();
+        return new Promise((resolve, reject) => {
+            smsCaptcha(params).then(res => {
+                const data = res.data;
+                if (data) {
+                    resolve(data);
+                } else {
+                    resolve(-1);
+                }
+            }).catch(err => {
+                reject(err)
+            }).finally(res => {
+                utils.nProgress.done();
+            })
+        });
+    }
+};
+
+const handleSignUp = (params) => {
+    return (dispatch, getState) => {
+        utils.nProgress.start();
+        dispatch(handleLoading(true));
+        return new Promise((resolve, reject) => {
+            signUp(params).then(res => {
+                const data = res.data;
+                if (data) {
+                    dispatch(token(data.token));
+                    resolve(data);
+                } else {
+                    resolve(-1);
+                }
+            }).catch(err => {
+                reject(err)
+            }).finally(res => {
+                utils.nProgress.done();
+                dispatch(handleLoading(false));
             })
         });
     }
@@ -69,4 +112,6 @@ export {
     localeEN,
     localeZH,
     handleSignIn,
+    handleCaptcha,
+    handleSignUp,
 }

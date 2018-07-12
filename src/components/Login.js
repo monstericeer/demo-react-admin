@@ -48,7 +48,7 @@ class Login extends React.Component {
                 emptyMessage: loginForm.emptyMobile,
                 pattern: /^[1][3,4,5,7,8][0-9]{9}$/,
                 errorMessage: loginForm.errorMobile,
-                icon: 'user',
+                icon: 'mobile',
                 type: 'text',
                 placeholder: loginForm.phMobile,
                 title: loginForm.phMobile
@@ -79,12 +79,12 @@ class Login extends React.Component {
                                     <FormItem className="form_item" key={i} label={null/*item.label*/}>
                                         {getFieldDecorator(item.key, {
                                             validate: [{
-                                                trigger: 'onBlur',
+                                                trigger: ['onBlur'],
                                                 rules: [
                                                     {required: item.required, message: item.emptyMessage}
                                                 ],
                                             }, {
-                                                trigger: 'onBlur', // ['onBlur', 'onChange']
+                                                trigger: ['onBlur', 'onChange'],
                                                 rules: [
                                                     { pattern: item.pattern, message: item.errorMessage }
                                                 ],

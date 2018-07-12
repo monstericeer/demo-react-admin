@@ -38,7 +38,7 @@ export const loadingReducer = (state = {isLoading: false}, action) => {
     }
 };
 
-// sign in
+// token
 export const tokenReducer = (state = {token: localStorage.getItem('token')}, action) => {
     switch (action.type) {
         case 'TOKEN':
