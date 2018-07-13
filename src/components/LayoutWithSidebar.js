@@ -5,7 +5,7 @@ import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {Layout, Menu, Icon, Dropdown, Avatar, Breadcrumb, Button} from 'antd';
-import {localeEN, localeZH, handleSignOut} from "../redux/actions";
+import {localeEN, localeZH, handleToggle, handleSignOut} from "../redux/actions";
 import utils from "../libs/utils";
 import history from "../libs/history";
 import '../assets/css/layoutHasSidebar.less';
@@ -14,6 +14,7 @@ const mapStateToProps = (state) => {
     return {
         locale: state.localeReducer.locale,
         msgs: state.localeReducer.msgs,
+        collapsed: state.toggleReducer.collapsed,
     }
 };
 
@@ -21,6 +22,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         localeZH: () => dispatch(localeZH()),
         localeEN: () => dispatch(localeEN()),
+        handleToggle: () => dispatch(handleToggle()),
         handleSignOut: () => dispatch(handleSignOut())
     }
 };
@@ -33,12 +35,6 @@ const navBar = [
 ];
 
 class LayoutWithSidebar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            collapsed: false
-        }
-    }
 
     handleClick = () => {
         if (this.props.locale === 'zh-CN') {
@@ -72,7 +68,7 @@ class LayoutWithSidebar extends React.Component {
                     theme="dark"
                     trigger={null}
                     collapsible
-                    collapsed={this.state.collapsed}
+                    collapsed={this.props.collapsed}
                     className="nav_bar"
                 >
                     <div className="logo" />
@@ -94,7 +90,7 @@ class LayoutWithSidebar extends React.Component {
                                 <Menu.Item key={item.name}>
                                     <NavLink to={`/${item.linkTo}`}>
                                         <Icon type={item.icon} />
-                                        {this.state.collapsed ? '' : <span>{navItem[item.name]}</span>}
+                                        <span>{navItem[item.name]}</span>
                                     </NavLink>
                                 </Menu.Item>
                             ))
@@ -107,8 +103,8 @@ class LayoutWithSidebar extends React.Component {
                         <div className='toggle_wrapper'>
                             <Icon
                                 className="trigger"
-                                type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-                                onClick={() => this.setState({collapsed: !this.state.collapsed})}
+                                type={this.props.collapsed ? 'menu-unfold' : 'menu-fold'}
+                                onClick={this.props.handleToggle}
                             />
                             <Button type='default' size='small' onClick={this.handleClick}>
                                 {this.props.locale === 'zh-CN' ? 'EN' : '中文'}

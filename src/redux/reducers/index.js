@@ -26,6 +26,18 @@ export const localeReducer = (state = {locale: localLanguage || language, msgs: 
     }
 };
 
+// nav toggle
+export const toggleReducer = (state = {collapsed: false}, action) => {
+    switch (action.type) {
+        case 'TOGGLE':
+            return {
+                collapsed: !state.collapsed
+            };
+        default:
+            return state;
+    }
+};
+
 // loading
 export const loadingReducer = (state = {isLoading: false}, action) => {
     switch (action.type) {

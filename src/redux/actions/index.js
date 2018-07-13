@@ -29,6 +29,10 @@ const localeZH = () => {
     }
 };
 
+const handleToggle = () => ({
+    type: 'TOGGLE',
+});
+
 const handleLoading = (isLoading) => ({
     type: 'LOADING',
     isLoading
@@ -136,6 +140,7 @@ const handleSignOut = () => {
 export {
     localeEN,
     localeZH,
+    handleToggle,
     handleSignIn,
     handleCaptcha,
     handleSignUp,
