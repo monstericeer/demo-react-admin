@@ -53,7 +53,7 @@ const en_US = {
     // nav bar
     navItem: {
         home: 'Home',
-        messages: 'Messages',
+        products: 'Products',
     },
     // user settings
     userMenu: {

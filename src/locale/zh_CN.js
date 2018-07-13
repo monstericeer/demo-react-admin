@@ -53,7 +53,7 @@ const en_ZH = {
     // 导航栏
     navItem: {
         home: '首页',
-        messages: '消息中心',
+        products: '产品列表',
     },
     // 用户设置
     userMenu: {

@@ -28,7 +28,7 @@ const { Header, Content, Sider, Footer } = Layout;
 
 const navBar = [
     {linkTo: 'home', name: 'home', icon: 'home'},
-    {linkTo: 'messages', name: 'messages', icon: 'mail'},
+    {linkTo: 'products', name: 'products', icon: 'book'},
 ];
 
 class LayoutWithSidebar extends React.Component {
