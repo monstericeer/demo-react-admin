@@ -7,6 +7,8 @@ const en_US = {
         signupFail: 'Sign up failed',
         smsCaptchaSuccess: 'Captcha sent',
         smsCaptchaFail: 'Failed to send captcha',
+        logoutSuccess: 'Logged out',
+        logoutFail: 'Log out failed',
     },
     // Login
     loginIntro: {

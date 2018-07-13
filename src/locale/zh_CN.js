@@ -7,6 +7,8 @@ const en_ZH = {
         signupFail: '注册失败',
         smsCaptchaSuccess: '验证码已发送',
         smsCaptchaFail: '获取验证码失败',
+        logoutSuccess: '登出成功',
+        logoutFail: '登出失败',
     },
     // 登陆
     loginIntro: {

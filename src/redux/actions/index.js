@@ -5,7 +5,7 @@ import en_US from '../../locale/en_US';
 import zh_CN from '../../locale/zh_CN';
 import en from 'react-intl/locale-data/en';
 import zh from 'react-intl/locale-data/zh';
-import {signIn, smsCaptcha, signUp} from '../../api/api';
+import {signIn, smsCaptcha, signUp, signOut} from '../../api/api';
 import utils from '../../libs/utils';
 
 // locale provider
@@ -35,7 +35,11 @@ const handleLoading = (isLoading) => ({
 });
 
 const token = (token) => {
-    window.localStorage.setItem('token', token);
+    if (token) {
+        window.localStorage.setItem('token', token);
+    } else {
+        window.localStorage.removeItem('token');
+    }
     return {
         type: 'TOKEN',
         token
@@ -108,10 +112,32 @@ const handleSignUp = (params) => {
     }
 };
 
+const handleSignOut = () => {
+    return (dispatch, getState) => {
+        utils.nProgress.start();
+        return new Promise((resolve, reject) => {
+            signOut().then(res => {
+                const data = res.data;
+                if (data) {
+                    dispatch(token(data.token));
+                    resolve(data);
+                } else {
+                    resolve(-1);
+                }
+            }).catch(err => {
+                reject(err)
+            }).finally(res => {
+                utils.nProgress.done();
+            })
+        });
+    }
+};
+
 export {
     localeEN,
     localeZH,
     handleSignIn,
     handleCaptcha,
     handleSignUp,
+    handleSignOut,
 }

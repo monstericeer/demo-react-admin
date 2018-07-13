@@ -5,8 +5,9 @@ import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {Layout, Menu, Icon, Dropdown, Avatar, Breadcrumb, Button} from 'antd';
-import {localeEN, localeZH} from "../redux/actions";
+import {localeEN, localeZH, handleSignOut} from "../redux/actions";
 import '../assets/css/layoutHasSidebar.less';
+import utils from "../libs/utils";
 
 const mapStateToProps = (state) => {
     return {
@@ -19,6 +20,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         localeZH: () => dispatch(localeZH()),
         localeEN: () => dispatch(localeEN()),
+        handleSignOut: () => dispatch(handleSignOut())
     }
 };
 
@@ -45,13 +47,22 @@ class LayoutWithSidebar extends React.Component {
         }
     };
 
+    handleSignOut = () => {
+        const {logoutSuccess, logoutFail} = this.props.msgs.messages;
+        this.props.handleSignOut().then(res => {
+            res === -1 ? utils.nMessage.error(logoutFail) : utils.nMessage.success(logoutSuccess);
+        }).catch(err => {
+            utils.nMessage.error(logoutFail)
+        })
+    };
+
     render() {
         const {navItem, userMenu} = this.props.msgs;
         const menu = (
             <Menu className="header_menu">
                 <Menu.Item key="0">{userMenu.profile}</Menu.Item>
                 <Menu.Divider />
-                <Menu.Item key="1">{userMenu.signout}</Menu.Item>
+                <Menu.Item key="1" onClick={this.handleSignOut}>{userMenu.signout}</Menu.Item>
             </Menu>
         );
         return (

@@ -16,10 +16,17 @@ export const smsCaptcha = (params) => {
     })
 };
 
-export  const signUp = (params) => {
+export const signUp = (params) => {
     return axios.request({
         url: 'users/signup',
         data: params,
+        method: 'post'
+    })
+};
+
+export const signOut = () => {
+    return axios.request({
+        url: 'users/signout',
         method: 'post'
     })
 };
