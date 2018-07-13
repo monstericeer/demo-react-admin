@@ -50,10 +50,11 @@ const en_US = {
         button: 'Sign up',
         login: 'Already have an account? Log in now',
     },
-    // nav bar
+    // nav bar and breadcrumb
     navItem: {
         home: 'Home',
         products: 'Products',
+        profile: 'Profile',
     },
     // user settings
     userMenu: {

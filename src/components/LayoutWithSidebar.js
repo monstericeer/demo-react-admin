@@ -6,8 +6,9 @@ import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {Layout, Menu, Icon, Dropdown, Avatar, Breadcrumb, Button} from 'antd';
 import {localeEN, localeZH, handleSignOut} from "../redux/actions";
-import '../assets/css/layoutHasSidebar.less';
 import utils from "../libs/utils";
+import history from "../libs/history";
+import '../assets/css/layoutHasSidebar.less';
 
 const mapStateToProps = (state) => {
     return {
@@ -60,7 +61,7 @@ class LayoutWithSidebar extends React.Component {
         const {navItem, userMenu} = this.props.msgs;
         const menu = (
             <Menu className="header_menu">
-                <Menu.Item key="0">{userMenu.profile}</Menu.Item>
+                <Menu.Item key="0" onClick={() => history.push('/profile')}>{userMenu.profile}</Menu.Item>
                 <Menu.Divider />
                 <Menu.Item key="1" onClick={this.handleSignOut}>{userMenu.signout}</Menu.Item>
             </Menu>
@@ -126,11 +127,7 @@ class LayoutWithSidebar extends React.Component {
                         <Breadcrumb className="breadcrumb">
                             {
                                 this.props.location.pathname.split('/').map((str, index) => (
-                                    navBar.map((item, index) => {
-                                        if (item.linkTo === str)
-                                            return <Breadcrumb.Item key={index}>{navItem[item.name]}</Breadcrumb.Item>;
-                                        return null;
-                                    })
+                                    <Breadcrumb.Item key={index}>{navItem[str]}</Breadcrumb.Item>
                                 ))
                             }
                         </Breadcrumb>

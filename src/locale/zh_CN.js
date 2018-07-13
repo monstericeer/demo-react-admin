@@ -54,6 +54,7 @@ const en_ZH = {
     navItem: {
         home: '首页',
         products: '产品列表',
+        profile: '用户资料',
     },
     // 用户设置
     userMenu: {
