@@ -128,7 +128,7 @@ class LayoutWithSidebar extends React.Component {
                                 this.props.location.pathname.split('/').map((str, index) => (
                                     navBar.map((item, index) => {
                                         if (item.linkTo === str)
-                                            return <Breadcrumb.Item key={index}>{this.props.msgs[item.name]}</Breadcrumb.Item>;
+                                            return <Breadcrumb.Item key={index}>{navItem[item.name]}</Breadcrumb.Item>;
                                         return null;
                                     })
                                 ))
