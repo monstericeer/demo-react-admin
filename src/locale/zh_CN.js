@@ -61,6 +61,13 @@ const en_ZH = {
         profile: '用户资料',
         signout: '退出',
     },
+    // home
+    cardInfo: {
+        balance: '账户余额',
+        products: '产品总数',
+        customers: '用户总数',
+        transactions: '交易总数',
+    },
 };
 
 export default en_ZH;

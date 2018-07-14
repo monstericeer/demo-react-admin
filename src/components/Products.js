@@ -1,9 +1,12 @@
-import React, {Fragment} from 'react';
+import React from 'react';
+import {Card} from 'antd';
 
 class Products extends React.Component {
     render() {
         return (
-            <Fragment>Products</Fragment>
+            <Card bordered={false} className='content'>
+                Products
+            </Card>
         )
     }
 }

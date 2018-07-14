@@ -61,6 +61,13 @@ const en_US = {
         profile: 'Profile',
         signout: 'Sign out'
     },
+    // home
+    cardInfo: {
+        balance: 'Balance',
+        products: 'Products',
+        customers: 'Customers',
+        transactions: 'Transactions',
+    },
 };
 
 export default en_US;

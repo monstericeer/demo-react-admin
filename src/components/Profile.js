@@ -1,9 +1,12 @@
-import React, {Fragment} from 'react';
+import React from 'react';
+import {Card} from 'antd';
 
 class Profile extends React.Component {
     render() {
         return (
-            <Fragment>Profile</Fragment>
+            <Card bordered={false} className='content'>
+                Profile
+            </Card>
         )
     }
 }
