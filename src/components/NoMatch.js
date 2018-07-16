@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import dizzy from '../assets/svgs/dizzy.svg';
 import '../assets/css/noMatch.less';
 
