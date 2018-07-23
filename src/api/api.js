@@ -30,3 +30,10 @@ export const signOut = () => {
         method: 'post'
     })
 };
+
+export const userProfile = () => {
+    return axios.request({
+        url: 'users/profile',
+        method: 'get'
+    })
+};

@@ -61,3 +61,15 @@ export const tokenReducer = (state = {token: localStorage.getItem('token')}, act
             return state;
     }
 };
+
+// profile
+export const profileReducer = (state = {profile: {}}, action) => {
+    switch (action.type) {
+        case 'PROFILE':
+            return {
+                profile: action.profile
+            };
+        default:
+            return state;
+    }
+};
