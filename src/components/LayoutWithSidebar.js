@@ -126,6 +126,10 @@ class LayoutWithSidebar extends React.Component {
                                     <Breadcrumb.Item key={index}>{navItem[str]}</Breadcrumb.Item>
                                 ))
                             }
+                            {
+                                this.props.location.pathname.split('/')[1] === 'products' && this.props.location.pathname.split('/')[2] &&
+                                <Breadcrumb.Item key='productDetails'>{navItem['productDetails']}</Breadcrumb.Item>
+                            }
                         </Breadcrumb>
                         <div className="content">
                             {this.props.children}

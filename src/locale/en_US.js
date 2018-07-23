@@ -55,6 +55,7 @@ const en_US = {
         home: 'Home',
         products: 'Products',
         profile: 'Profile',
+        productDetails: 'Product Details',
     },
     // user settings
     userMenu: {

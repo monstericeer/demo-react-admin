@@ -55,6 +55,7 @@ const en_ZH = {
         home: '首页',
         products: '产品列表',
         profile: '用户资料',
+        productDetails: '产品详情',
     },
     // 用户设置
     userMenu: {
