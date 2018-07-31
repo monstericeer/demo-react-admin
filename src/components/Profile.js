@@ -147,7 +147,7 @@ class Profile extends React.Component {
                                 {getFieldDecorator('birthday', {
                                     initialValue: moment(birthday, 'YYYY-MM-DD'),
                                 })(
-                                    <DatePicker placeholder='选择日期'/>
+                                    <DatePicker placeholder='选择日期' style={{ width: '100%' }}/>
                                 )}
                             </FormItem>
                             <FormItem label='所在省市' {...formItemLayout}>
