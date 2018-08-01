@@ -5,6 +5,8 @@ import moment from 'moment';
 import {handleProfile, handleEditProfile} from "../redux/actions";
 import options from '../locale/locale-data';
 import utils from "../libs/utils";
+import {baseURL} from '../config/url';
+import '../assets/css/profile.less';
 
 const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
@@ -23,6 +25,12 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 class Profile extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            picLoading: false
+        }
+    }
 
     handleClick = (e) => {
         e.preventDefault();
@@ -56,12 +64,48 @@ class Profile extends React.Component {
         return options
     };
 
+    beforeUpload = (file) => {
+        const isJPG = file.type === 'image/jpeg';
+        if (!isJPG) {
+            utils.nMessage.error('只能上传JPG')
+        }
+        const isLt2M = file.size / 1024 / 1024 < 2;
+        if (!isLt2M) {
+            utils.nMessage.error('超过2MB')
+        }
+        return isJPG && isLt2M;
+    };
+
+    handleChange = (info) => {
+        if (info.file.status === 'uploading') {
+            this.setState({ loading: true });
+            return;
+        }
+        if (info.file.status === 'done') {
+            // Get this url from response in real world.
+            this.getBase64(info.file.originFileObj, imageUrl => this.setState({
+                imageUrl,
+                loading: false,
+            }));
+            utils.nMessage.success('上传成功');
+            this.props.handleProfile();
+        }
+        if (info.file.status === 'error') {
+            utils.nMessage.error('上传失败')
+        }
+    };
+
+    getBase64 = (img, callback) => {
+        const reader = new FileReader();
+        reader.addEventListener('load', () => callback(reader.result));
+        reader.readAsDataURL(img);
+    };
+    
     componentDidMount() {
         this.props.handleProfile();
     }
 
     render() {
-        console.log(this.props.profile);
         const {name, mobile, balance, gender, birthday, province, city, avatar} = this.props.profile;
         const {getFieldDecorator} = this.props.form;
         const formItemLayout = {
@@ -106,8 +150,14 @@ class Profile extends React.Component {
                 disabled: true,
             },
         ];
+        const uploadButton = (
+            <div>
+                <Icon type={this.state.picLoading ? 'loading' : 'plus'} />
+                <div>Upload</div>
+            </div>
+        );
         return (
-            <Card bordered={false} className='content'>
+            <Card bordered={false} className='profile'>
                 <Row type="flex" justify="space-around">
                     <Col xs={24} sm={24} md={8}>
                         <Form>
@@ -168,7 +218,18 @@ class Profile extends React.Component {
                         </Form>
                     </Col>
                     <Col  xs={24} sm={24} md={8}>
-
+                        <Upload
+                            name="avatar"
+                            listType="picture-card"
+                            className="avatar"
+                            showUploadList={false}
+                            action={baseURL + 'users/avatarEdit'}
+                            headers={{Authorization: `Bearer ${localStorage.getItem('token')}`}}
+                            beforeUpload={this.beforeUpload}
+                            onChange={this.handleChange}
+                        >
+                            {avatar ? <img src={ baseURL + avatar} alt=''/> : uploadButton}
+                        </Upload>
                     </Col>
                 </Row>
             </Card>

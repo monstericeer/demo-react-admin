@@ -4,7 +4,7 @@ import {Card} from 'antd';
 class ProductDetails extends React.Component {
     render() {
         return (
-            <Card bordered={false} className='content'>
+            <Card bordered={false} className='product_details'>
                 Details
             </Card>
         )
