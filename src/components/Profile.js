@@ -4,7 +4,6 @@ import {Button, Card, Row, Col, Form, Input, Radio, DatePicker, Cascader} from '
 import moment from 'moment';
 import {handleProfile} from "../redux/actions";
 import options from '../locale/locale-data';
-import utils from "../libs/utils";
 
 const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
