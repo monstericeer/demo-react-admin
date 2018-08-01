@@ -100,7 +100,7 @@ class Profile extends React.Component {
         reader.addEventListener('load', () => callback(reader.result));
         reader.readAsDataURL(img);
     };
-    
+
     componentDidMount() {
         this.props.handleProfile();
     }
