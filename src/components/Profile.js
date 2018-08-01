@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {Button, Card, Row, Col, Form, Input, Radio, DatePicker, Cascader} from 'antd';
+import {Button, Card, Row, Col, Form, Input, Radio, DatePicker, Cascader, Upload, Icon} from 'antd';
 import moment from 'moment';
-import {handleProfile} from "../redux/actions";
+import {handleProfile, handleEditProfile} from "../redux/actions";
 import options from '../locale/locale-data';
+import utils from "../libs/utils";
 
 const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
@@ -16,7 +17,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleProfile: () => dispatch(handleProfile())
+        handleProfile: () => dispatch(handleProfile()),
+        handleEditProfile: (params) => dispatch(handleEditProfile(params))
     }
 };
 
@@ -28,11 +30,15 @@ class Profile extends React.Component {
             if (!err && values) {
                 const params = {
                     gender: values['gender'],
-                    birthday: values['birthday'].format('YYYY-MM-DD'),
-                    province: values['provinceAndCity'][0],
-                    city: values['provinceAndCity'][1],
+                    birthday: values['birthday'] ? values['birthday'].format('YYYY-MM-DD') : null,
+                    province: values['provinceAndCity'][0] || null,
+                    city: values['provinceAndCity'][1] || null,
                 };
-                console.log(params)
+                this.props.handleEditProfile(params).then(res => {
+                    res === -1 ? utils.nMessage.error('提交失败') : utils.nMessage.success('提交成功');
+                }).catch(err => {
+                    utils.nMessage.error('提交失败')
+                });
             }
         });
     };
@@ -102,7 +108,7 @@ class Profile extends React.Component {
         ];
         return (
             <Card bordered={false} className='content'>
-                <Row type="flex" justify="start">
+                <Row type="flex" justify="space-around">
                     <Col xs={24} sm={24} md={8}>
                         <Form>
                             {
@@ -144,7 +150,7 @@ class Profile extends React.Component {
                             </FormItem>
                             <FormItem label='生日' {...formItemLayout}>
                                 {getFieldDecorator('birthday', {
-                                    initialValue: moment(birthday, 'YYYY-MM-DD'),
+                                    initialValue: birthday ? moment(birthday, 'YYYY-MM-DD') : null,
                                 })(
                                     <DatePicker placeholder='选择日期' style={{ width: '100%' }}/>
                                 )}
@@ -160,6 +166,9 @@ class Profile extends React.Component {
                                 <Button type="primary" onClick={this.handleClick}>修改</Button>
                             </FormItem>
                         </Form>
+                    </Col>
+                    <Col  xs={24} sm={24} md={8}>
+
                     </Col>
                 </Row>
             </Card>

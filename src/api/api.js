@@ -37,3 +37,11 @@ export const userProfile = () => {
         method: 'get'
     })
 };
+
+export const editUserProfile = (params) => {
+    return axios.request({
+        url: 'users/profileEdit',
+        data: params,
+        method: 'post'
+    })
+};

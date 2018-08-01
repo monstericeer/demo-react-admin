@@ -5,7 +5,7 @@ import en_US from '../../locale/en_US';
 import zh_CN from '../../locale/zh_CN';
 import en from 'react-intl/locale-data/en';
 import zh from 'react-intl/locale-data/zh';
-import {signIn, smsCaptcha, signUp, signOut, userProfile} from '../../api/api';
+import {signIn, smsCaptcha, signUp, signOut, userProfile, editUserProfile} from '../../api/api';
 import utils from '../../libs/utils';
 
 // locale provider
@@ -163,6 +163,25 @@ const handleProfile = () => {
     }
 };
 
+const handleEditProfile = (params) => {
+    return (dispatch, getState) => {
+        utils.nProgress.start();
+        return new Promise((resolve, reject) => {
+            editUserProfile(params).then(res => {
+                if (res.code === 1000) {
+                    resolve()
+                } else {
+                    resolve(-1)
+                }
+            }).catch(err => {
+                reject(err)
+            }).finally(res => {
+                utils.nProgress.done();
+            })
+        })
+    }
+};
+
 export {
     localeEN,
     localeZH,
@@ -172,4 +191,5 @@ export {
     handleSignUp,
     handleSignOut,
     handleProfile,
+    handleEditProfile,
 }
