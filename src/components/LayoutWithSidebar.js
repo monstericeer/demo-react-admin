@@ -4,8 +4,9 @@
 import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import {Layout, Menu, Icon, Dropdown, Avatar, Breadcrumb, Button} from 'antd';
-import {localeEN, localeZH, handleToggle, handleSignOut} from "../redux/actions";
+import {Layout, Menu, Icon, Dropdown, Breadcrumb, Button, Avatar} from 'antd';
+import {localeEN, localeZH, handleToggle, handleSignOut, handleProfile} from "../redux/actions";
+import {baseURL} from '../config/url';
 import utils from "../libs/utils";
 import history from "../libs/history";
 import '../assets/css/layoutHasSidebar.less';
@@ -15,6 +16,7 @@ const mapStateToProps = (state) => {
         locale: state.localeReducer.locale,
         msgs: state.localeReducer.msgs,
         collapsed: state.toggleReducer.collapsed,
+        profile: state.profileReducer.profile,
     }
 };
 
@@ -23,7 +25,8 @@ const mapDispatchToProps = (dispatch) => {
         localeZH: () => dispatch(localeZH()),
         localeEN: () => dispatch(localeEN()),
         handleToggle: () => dispatch(handleToggle()),
-        handleSignOut: () => dispatch(handleSignOut())
+        handleSignOut: () => dispatch(handleSignOut()),
+        handleProfile: () => dispatch(handleProfile()),
     }
 };
 
@@ -53,8 +56,13 @@ class LayoutWithSidebar extends React.Component {
         })
     };
 
+    componentDidMount() {
+        this.props.handleProfile();
+    };
+
     render() {
         const {navItem, userMenu} = this.props.msgs;
+        const {name, avatar} = this.props.profile;
         const menu = (
             <Menu className="header_menu">
                 <Menu.Item key="0" onClick={() => history.push('/profile')}>{userMenu.profile}</Menu.Item>
@@ -113,8 +121,10 @@ class LayoutWithSidebar extends React.Component {
                         <div className="header_right">
                             <Dropdown overlay={menu} trigger={['hover']}>
                                 <div className="user">
-                                    <div className="name">Mo Chen</div>
-                                    <Avatar>Mo</Avatar>
+                                    <div className="name">{name}</div>
+                                    {
+                                        avatar ? <Avatar src={baseURL + avatar}/> : <Avatar>{name ? name.substr(0,1) : ''}</Avatar>
+                                    }
                                 </div>
                             </Dropdown>
                         </div>
