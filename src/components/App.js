@@ -23,7 +23,7 @@ class App extends React.Component {
             <Switch>
                 {
                     configsNeedAuth.map(({ path, exact, component: Comp }, index) => (
-                        <Route key={index} path={path} exact={exact} render={(props) =>
+                        <Route path={path} exact={exact} render={(props) =>
                             isAuthenticated ? (
                                 <LayoutWithSidebar {...props}>
                                     <Comp {...props}/>
@@ -36,7 +36,7 @@ class App extends React.Component {
                 }
                 {
                     configsNoAuth.map(({ path, exact, component: Comp }, index) => (
-                        <Route key={index} path={path} exact={exact} render={(props) =>
+                        <Route path={path} exact={exact} render={(props) =>
                             !isAuthenticated ? (
                                 <LayoutWithoutSidebar {...props}>
                                     <Comp {...props}/>
