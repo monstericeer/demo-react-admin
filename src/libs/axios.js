@@ -83,6 +83,19 @@ class httpRequest {
         this.queue[options.url] = instance;
         return instance(options);
     }
+    requestFormData(options) {
+        let instance = Axios.create({
+            baseURL,
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            },
+            withCredentials: true
+        });
+        this.interceptors(instance, options.url);
+        options = Object.assign({}, options);
+        this.queue[options.url] = instance;
+        return instance(options)
+    }
 }
 
 export default httpRequest;
