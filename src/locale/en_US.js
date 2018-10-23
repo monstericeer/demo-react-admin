@@ -13,7 +13,7 @@ const en_US = {
     // Login
     loginIntro: {
         title: 'This is a React Demo',
-        details: 'The tech stack used in this project includes ES6, Create-React-App, React v16.x, React-Router v4.x, Antd v3.x, React Intl, Redux v4.x, React-Redux v5.x, Axios, Redux-thunk, ServiceWorker, Less. In the next version, the Demo will be constructed by Webpack v4.x, Redux-saga will be used instead of the current scheme of Redux-thunk. Besides, Selector will be added to optimize the state management. Moreover, Node middle layer, Server side rendering and Immutable might be added in the future version.',
+        details: 'The tech stack used in this project includes ES6, Create-React-App v1.x, React v16.x, React-Router v4.x, Antd v3.x, React Intl, Redux v4.x, React-Redux v5.x, Axios, Redux-thunk, ServiceWorker, Less. In the next version, the Demo will be constructed by Webpack v4.x, Redux-saga will be used instead of the current scheme of Redux-thunk. Besides, Selector will be added to optimize the state management. Moreover, Node middle layer, Server side rendering and Immutable might be added in the future version.',
     },
     loginForm: {
         title: 'Log in',
@@ -68,6 +68,26 @@ const en_US = {
         products: 'Products',
         customers: 'Customers',
         transactions: 'Transactions',
+    },
+    // profile
+    userInfo: {
+        name: 'Name',
+        mobile: 'Mobile',
+        balance: 'Balance',
+        gender: 'Gender',
+        male: 'Male',
+        female: 'Female',
+        birthday: 'Birthday',
+        birthdayPlaceholder: 'Select a date',
+        locale: 'Prov/City',
+        localePlaceholder: 'Select Prov/City',
+        editSuccess: 'Edit Succeed',
+        editFail: 'Edit failed',
+        uploadFormat: 'Only .JPGs are allowed',
+        uploadSize: 'Exceed 2MB',
+        uploadSuccess: 'Upload succeed',
+        uploadFail: 'Upload failed',
+        buttonText: 'Edit',
     },
 };
 

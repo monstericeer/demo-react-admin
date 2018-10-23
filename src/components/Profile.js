@@ -14,6 +14,7 @@ const RadioGroup = Radio.Group;
 const mapStateToProps = (state) => {
     return {
         profile: state.profileReducer.profile,
+        msgs: state.localeReducer.msgs,
     }
 };
 
@@ -34,6 +35,7 @@ class Profile extends React.Component {
 
     handleClick = (e) => {
         e.preventDefault();
+        const {editSuccess, editFail} = this.props.msgs.userInfo;
         this.props.form.validateFields((err, values) => {
             if (!err && values) {
                 const params = {
@@ -43,9 +45,9 @@ class Profile extends React.Component {
                     city: values['provinceAndCity'][1] || null,
                 };
                 this.props.handleEditProfile(params).then(res => {
-                    res === -1 ? utils.nMessage.error('提交失败') : utils.nMessage.success('提交成功');
+                    res === -1 ? utils.nMessage.error(editFail) : utils.nMessage.success(editSuccess);
                 }).catch(err => {
-                    utils.nMessage.error('提交失败')
+                    utils.nMessage.error(editFail)
                 });
             }
         });
@@ -65,18 +67,20 @@ class Profile extends React.Component {
     };
 
     beforeUpload = (file) => {
+        const {uploadFormat, uploadSize} = this.props.msgs.userInfo;
         const isJPG = file.type === 'image/jpeg';
         if (!isJPG) {
-            utils.nMessage.error('只能上传JPG')
+            utils.nMessage.error(uploadFormat)
         }
         const isLt2M = file.size / 1024 / 1024 < 2;
         if (!isLt2M) {
-            utils.nMessage.error('超过2MB')
+            utils.nMessage.error(uploadSize)
         }
         return isJPG && isLt2M;
     };
 
     handleChange = (info) => {
+        const {uploadSuccess, uploadFail} = this.props.msgs.userInfo;
         if (info.file.status === 'uploading') {
             this.setState({ loading: true });
             return;
@@ -87,11 +91,11 @@ class Profile extends React.Component {
                 imageUrl,
                 loading: false,
             }));
-            utils.nMessage.success('上传成功');
+            utils.nMessage.success(uploadSuccess);
             this.props.handleProfile();
         }
         if (info.file.status === 'error') {
-            utils.nMessage.error('上传失败')
+            utils.nMessage.error(uploadFail)
         }
     };
 
@@ -106,6 +110,7 @@ class Profile extends React.Component {
     }
 
     render() {
+        const {userInfo} = this.props.msgs;
         const {name, mobile, balance, gender, birthday, province, city, avatar} = this.props.profile;
         const {getFieldDecorator} = this.props.form;
         const formItemLayout = {
@@ -132,19 +137,19 @@ class Profile extends React.Component {
         };
         const formItems= [
             {
-                label: '姓名',
+                label: userInfo.name,
                 key: 'name',
                 initialValue: name,
                 disabled: true,
             },
             {
-                label: '手机号码',
+                label: userInfo.mobile,
                 key: 'mobile',
                 initialValue: mobile,
                 disabled: true,
             },
             {
-                label: '余额',
+                label: userInfo.balance,
                 key: 'balance',
                 initialValue: String(balance),
                 disabled: true,
@@ -188,32 +193,32 @@ class Profile extends React.Component {
                                     </FormItem>
                                 ))
                             }
-                            <FormItem label='性别' {...formItemLayout}>
+                            <FormItem label={userInfo.gender} {...formItemLayout}>
                                 {getFieldDecorator('gender', {
                                     initialValue: gender,
                                 })(
                                     <RadioGroup>
-                                        <Radio value="male">男</Radio>
-                                        <Radio value="female">女</Radio>
+                                        <Radio value="male">{userInfo.male}</Radio>
+                                        <Radio value="female">{userInfo.female}</Radio>
                                     </RadioGroup>
                                 )}
                             </FormItem>
-                            <FormItem label='生日' {...formItemLayout}>
+                            <FormItem label={userInfo.birthday} {...formItemLayout}>
                                 {getFieldDecorator('birthday', {
                                     initialValue: birthday ? moment(birthday, 'YYYY-MM-DD') : null,
                                 })(
-                                    <DatePicker placeholder='选择日期' style={{ width: '100%' }}/>
+                                    <DatePicker placeholder={userInfo.birthdayPlaceholder} style={{ width: '100%' }}/>
                                 )}
                             </FormItem>
-                            <FormItem label='所在省市' {...formItemLayout}>
+                            <FormItem label={userInfo.locale} {...formItemLayout}>
                                 {getFieldDecorator('provinceAndCity', {
                                     initialValue: [province, city],
                                 })(
-                                    <Cascader  placeholder='选择所在省市' options={this.preProcessingLocale(options)}/>
+                                    <Cascader  placeholder={userInfo.localePlaceholder} options={this.preProcessingLocale(options)}/>
                                 )}
                             </FormItem>
                             <FormItem {...tailFormItemLayout}>
-                                <Button type="primary" onClick={this.handleClick}>修改</Button>
+                                <Button type="primary" onClick={this.handleClick}>{userInfo.buttonText}</Button>
                             </FormItem>
                         </Form>
                     </Col>

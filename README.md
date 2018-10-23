@@ -38,6 +38,7 @@ demo-react-admin
 * ~~Replace css with Less~~
 * ~~Replace Fetch with Axios~~
 * ~~Add request/response interceptors~~
+* Migrate to create-react-app 2.x
 * Webpack v4.x
 * Redux-saga
 * reselect
