@@ -2,10 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {Row, Col, Card} from 'antd';
 import '../assets/css/home.less';
-import kiss from '../assets/svgs/kiss.svg';
-import tongue from '../assets/svgs/tongueout.svg';
-import confused from '../assets/svgs/mengb.svg';
-import throwUp from '../assets/svgs/throwup.svg';
 
 const mapStateToProps = (state) => {
     return {
@@ -17,10 +13,10 @@ class Home extends React.Component {
     render() {
         const {cardInfo} = this.props.msgs;
         const dashCards = [
-            {svg: kiss, title: cardInfo.balance, data: 3456},
-            {svg: tongue, title: cardInfo.products, data: 3456},
-            {svg: confused, title: cardInfo.customers, data: 3456},
-            {svg: throwUp, title: cardInfo.transactions, data: 3456},
+            {svg: require('../assets/svgs/kiss.svg'), title: cardInfo.balance, data: 3456},
+            {svg: require('../assets/svgs/tongueout.svg'), title: cardInfo.products, data: 3456},
+            {svg: require('../assets/svgs/mengb.svg'), title: cardInfo.customers, data: 3456},
+            {svg: require('../assets/svgs/throwup.svg'), title: cardInfo.transactions, data: 3456},
         ];
         return (
             <div className='home_content'>
