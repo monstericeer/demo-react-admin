@@ -42,6 +42,6 @@ demo-react-admin
 * Webpack v4.x
 * Redux-saga
 * reselect
+* recompose
 * Immutable
 * Unit test
-* SSR
